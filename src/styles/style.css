@@ -35,6 +35,10 @@ body {
   font-weight: 700;
 }
 
+.team-details-wrapper {
+  margin-top: 4.8rem;
+}
+
 .title-two {
   font-family: var(--font-secondary);
   font-size: var(--title-sm);
@@ -42,11 +46,19 @@ body {
   text-transform: uppercase;
 }
 
+.team-details-wrapper .title-two {
+  margin-bottom: 1.5rem;
+}
+
 .text-description {
   font-family: var(--font-secondary);
   font-weight: 400;
   font-size: var(--text-md);
   line-height: 2.1rem;
+}
+
+.team-details-wrapper .text-description {
+  width: 90%;
 }
 
 figure {
