@@ -2,11 +2,14 @@
   --font-primary: "PT Serif", serif;
   --font-secondary: "Poppins", sans-serif;
 
+  --gray-1: #a9a9a9;
+
   --space-xs: 1.2rem;
   --space-sm: 1.5rem;
   --space-lg: 7.5rem;
 
   --text-md: 1.4rem;
+  --text-mds: 1.6rem;
   --text-lg: 1.8rem;
 
   --title-sm: 1.8rem;
@@ -23,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: var(--space-lg) var(--space-xs);
-  max-width: 930px;
+  max-width: 96rem;
   margin: 0 auto;
 }
 
@@ -88,7 +91,6 @@ main {
 figure {
   width: 100%;
   position: relative;
-  border: 1px solid green;
 }
 
 figure p {
@@ -122,7 +124,7 @@ footer {
 
 footer * {
   font-family: var(--font-secondary);
-  color: #000;
+  color: var(--gray-1);
   font-weight: 600;
   font-size: var(--text-md);
 }
@@ -133,6 +135,10 @@ footer a:first-child {
 }
 
 @media (min-width: 768px) {
+  .team-details-wrapper .text-description {
+    font-size: var(--text-mds);
+  }
+
   .grid-wrapper {
     grid-template-columns: repeat(3, minmax(16rem, 24rem));
     row-gap: 9rem;
@@ -149,5 +155,31 @@ footer a:first-child {
 
   .grid-wrapper figure:nth-child(3n + 2) {
     margin-top: 6.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 13.5rem;
+    flex-wrap: wrap;
+  }
+
+  .team-details-wrapper {
+    margin: 0;
+  }
+
+  .team-details-wrapper .text-description {
+    max-width: 44rem;
+    font-size: var(--text-lg);
+    line-height: 2.7rem;
+  }
+
+  footer * {
+    font-family: var(--font-secondary);
+    color: var(--gray-1);
+    font-weight: 600;
+    font-size: var(--text-md);
   }
 }
