@@ -8,6 +8,7 @@
   --space-sm: 1.5rem;
   --space-lg: 7.5rem;
 
+  --text-sm: 1.2rem;
   --text-md: 1.4rem;
   --text-mds: 1.6rem;
   --text-lg: 1.8rem;
@@ -72,28 +73,28 @@ main {
   padding: 0 0.6rem;
 }
 
+/* grid container*/
 .grid-wrapper {
   max-width: 930px;
-  margin: 10rem auto 0;
+  margin: 11rem auto 0;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 45%));
-  column-gap: 2.5rem;
   row-gap: 6rem;
 
   justify-content: space-between;
 }
 
-.grid-wrapper figure:nth-child(2n + 1) {
-  margin-top: -4rem;
+.grid-wrapper .figure:nth-child(2n + 1) {
+  margin-top: -4.5rem;
 }
 
-figure {
+.figure {
   width: 100%;
   position: relative;
 }
 
-figure p {
+.position {
   font-family: var(--font-primary);
   text-transform: uppercase;
   font-size: 1rem;
@@ -105,31 +106,31 @@ figure p {
   transform-origin: right;
 }
 
-figure img {
+.figure img {
   width: 90%;
   object-fit: fill;
 }
 
-figure figcaption {
+.figure figcaption {
   font-family: var(--font-secondary);
   font-weight: 600;
   font-size: var(--text-md);
   margin-top: 1rem;
 }
 
-footer {
+.footer {
   margin-top: 7rem;
   text-align: center;
 }
 
-footer * {
+.link {
   font-family: var(--font-secondary);
   color: var(--gray-1);
   font-weight: 600;
   font-size: var(--text-md);
 }
 
-footer a:first-child {
+.link:first-child {
   cursor: pointer;
   margin-right: 1.5rem;
 }
@@ -141,28 +142,32 @@ footer a:first-child {
 
   .grid-wrapper {
     grid-template-columns: repeat(3, minmax(16rem, 24rem));
-    row-gap: 9rem;
+    row-gap: 3rem;
   }
 
-  figure img {
+  .figure img {
     height: 34rem;
   }
 
-  figure figcaption {
+  .figure figcaption {
     font-size: var(--text-lg);
     margin-top: var(--space-sm);
   }
 
-  .grid-wrapper figure:nth-child(3n + 2) {
-    margin-top: 6.5rem;
+  .grid-wrapper .figure:nth-child(2n + 1) {
+    margin-top: 0;
+  }
+
+  .grid-wrapper .figure:nth-child(3n + 2):not(:first-child) {
+    margin-top: 10rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1020px) {
   .header {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 13.5rem;
+    margin-bottom: 10rem;
     flex-wrap: wrap;
   }
 
@@ -176,10 +181,14 @@ footer a:first-child {
     line-height: 2.7rem;
   }
 
-  footer * {
+  .link {
     font-family: var(--font-secondary);
     color: var(--gray-1);
     font-weight: 600;
     font-size: var(--text-md);
+  }
+
+  .position {
+    font-size: var(--text-sm);
   }
 }
