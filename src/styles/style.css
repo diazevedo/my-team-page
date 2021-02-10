@@ -3,9 +3,11 @@
   --font-secondary: "Poppins", sans-serif;
 
   --space-xs: 1.2rem;
+  --space-sm: 1.5rem;
   --space-lg: 7.5rem;
 
   --text-md: 1.4rem;
+  --text-lg: 1.8rem;
 
   --title-sm: 1.8rem;
   --title-lg: 3.6rem;
@@ -21,6 +23,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: var(--space-lg) var(--space-xs);
+  max-width: 930px;
+  margin: 0 auto;
 }
 
 /**Header element*/
@@ -61,10 +65,89 @@ body {
   width: 90%;
 }
 
+main {
+  padding: 0 0.6rem;
+}
+
+.grid-wrapper {
+  max-width: 930px;
+  margin: 10rem auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 45%));
+  column-gap: 2.5rem;
+  row-gap: 6rem;
+
+  justify-content: space-between;
+}
+
+.grid-wrapper figure:nth-child(2n + 1) {
+  margin-top: -4rem;
+}
+
 figure {
   width: 100%;
+  position: relative;
+  border: 1px solid green;
+}
+
+figure p {
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  transform: rotateZ(90deg) translateX(93%);
+  transform-origin: right;
 }
 
 figure img {
-  width: 100%;
+  width: 90%;
+  object-fit: fill;
+}
+
+figure figcaption {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: var(--text-md);
+  margin-top: 1rem;
+}
+
+footer {
+  margin-top: 7rem;
+  text-align: center;
+}
+
+footer * {
+  font-family: var(--font-secondary);
+  color: #000;
+  font-weight: 600;
+  font-size: var(--text-md);
+}
+
+footer a:first-child {
+  cursor: pointer;
+  margin-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(3, minmax(16rem, 24rem));
+    row-gap: 9rem;
+  }
+
+  figure img {
+    height: 34rem;
+  }
+
+  figure figcaption {
+    font-size: var(--text-lg);
+    margin-top: var(--space-sm);
+  }
+
+  .grid-wrapper figure:nth-child(3n + 2) {
+    margin-top: 6.5rem;
+  }
 }
