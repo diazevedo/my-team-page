@@ -10,7 +10,6 @@
 
   --text-sm: 1.2rem;
   --text-md: 1.4rem;
-  --text-mds: 1.6rem;
   --text-lg: 1.8rem;
 
   --title-sm: 1.8rem;
@@ -137,7 +136,8 @@ main {
 
 @media (min-width: 768px) {
   .team-details-wrapper .text-description {
-    font-size: var(--text-mds);
+    font-size: var(--text-lg);
+    line-height: 2.7rem;
   }
 
   .grid-wrapper {
@@ -177,8 +177,6 @@ main {
 
   .team-details-wrapper .text-description {
     max-width: 44rem;
-    font-size: var(--text-lg);
-    line-height: 2.7rem;
   }
 
   .link {
